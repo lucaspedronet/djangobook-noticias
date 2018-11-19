@@ -1,0 +1,16 @@
+<h1>Notícias de: {{categoria.nome}}</h1>
+<p>Porcentagem de notícias nesta categoria: {{ porcentagem|floatformat:1 }} %</p>
+<p>Esta página apresenta as notícias dessa categoria.</p>
+{# <h3>Descrição:</h3> #}
+<p><b>Descrição:</b> <i>{{categoria.descricao}}</i></p>
+
+  
+<ul>
+   {% for noticia in noticias %}
+   <img src="/media/yahoo.png" alt="Politica">
+   
+   <li><a href="/noticias/{{noticia.id}}/">{{noticia.titulo}}</a></li>
+    {% empty %}
+    <li>Não há notícia nesta categoria</li>
+    {% endfor %}
+</ul>
